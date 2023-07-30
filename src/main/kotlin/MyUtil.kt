@@ -4,17 +4,8 @@ import java.io.File
 
 class MyUtil {
     companion object {
-        val logger: Logger = LogManager.getLogger(MyClass::class.java)
-        //@JvmStatic
-        fun myUtilFunction() {
-            println("HelloWorld")
-        }
-        //@JvmStatic
+        val logger: Logger = LogManager.getLogger(MyUtil::class.java)
         fun readIsoFile(fileName: String): String {
-            //val fileName = "bon.txt" // Passe den Dateipfad entsprechend an
-            //val fileName = "uumlUTF8.txt" // Passe den Dateipfad entsprechend an
-            //val fileName = "uumlAnsi.txt" // Passe den Dateipfad entsprechend an
-
             try {
                 val file = File(fileName)
 
@@ -38,7 +29,5 @@ class MyUtil {
     }
 }
 fun main() {
-    //MyClass.doSomething()
-    //MyClass.readBon()
     MyUtil.readIsoFile("./src/test/resources/uumlAnsi.txt")
 }

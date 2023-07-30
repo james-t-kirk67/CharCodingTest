@@ -1,19 +1,16 @@
-import org.apache.logging.log4j.LogManager
-import org.apache.logging.log4j.Logger
-import java.io.*
+import java.io.File
 
-
-class MyClass {
+class MyUtil {
     companion object {
-        val logger: Logger = LogManager.getLogger(MyClass::class.java)
-
-        fun doSomething() {
-            logger.info("Rübezahl frisst Ähren. Hätte, hätte Fahrradkette")
+        @JvmStatic
+        fun myUtilFunction() {
+            println("HelloWorld")
         }
-        fun readBon() {
+        @JvmStatic
+        fun readIsoFile(fileName: String): String {
             //val fileName = "bon.txt" // Passe den Dateipfad entsprechend an
             //val fileName = "uumlUTF8.txt" // Passe den Dateipfad entsprechend an
-            val fileName = "uumlAnsi.txt" // Passe den Dateipfad entsprechend an
+            //val fileName = "uumlAnsi.txt" // Passe den Dateipfad entsprechend an
 
             try {
                 val file = File(fileName)
@@ -22,23 +19,18 @@ class MyClass {
                 if (file.exists()) {
                     //val content = file.readText()
                     val content = file.readText(Charsets.ISO_8859_1)
-                    println("Dateiinhalt:")
-                    println(content)
-                    logger.info(content)
+                    //println("Dateiinhalt:")
+                    return(content)
                     //logger.info(MyClass.convertAnsiToUtf8(content))
                     //logger.info(MyClass.convertWin1252toUtf8(content))
                 } else {
-                    println("Die angegebene Datei existiert nicht.")
+                    return "Die angegebene Datei existiert nicht."
                 }
             } catch (e: Exception) {
                 println("Fehler beim Lesen der Datei: ${e.message}")
             }
+            return "Error"
         }
+
     }
 }
-
-fun main() {
-    MyClass.doSomething()
-    MyClass.readBon()
-}
-

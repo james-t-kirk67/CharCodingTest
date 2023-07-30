@@ -22,8 +22,8 @@ class MyClass {
                 if (file.exists()) {
                     //val content = file.readText()
                     val content = file.readText(Charsets.ISO_8859_1)
-                    println("Dateiinhalt:")
                     println(content)
+                    logger.info("Function MyClass.readBon() Dateiinhalt:")
                     logger.info(content)
                     //logger.info(MyClass.convertAnsiToUtf8(content))
                     //logger.info(MyClass.convertWin1252toUtf8(content))
@@ -38,7 +38,9 @@ class MyClass {
 }
 
 fun main() {
-    MyClass.doSomething()
-    MyClass.readBon()
+    //MyClass.doSomething()
+    //MyClass.readBon()
+    MyUtil.readIsoFile("./src/test/resources/uumlAnsi.txt")
 }
+
 

@@ -1,12 +1,15 @@
+import org.apache.logging.log4j.LogManager
+import org.apache.logging.log4j.Logger
 import java.io.File
 
 class MyUtil {
     companion object {
-        @JvmStatic
+        val logger: Logger = LogManager.getLogger(MyClass::class.java)
+        //@JvmStatic
         fun myUtilFunction() {
             println("HelloWorld")
         }
-        @JvmStatic
+        //@JvmStatic
         fun readIsoFile(fileName: String): String {
             //val fileName = "bon.txt" // Passe den Dateipfad entsprechend an
             //val fileName = "uumlUTF8.txt" // Passe den Dateipfad entsprechend an
@@ -20,9 +23,9 @@ class MyUtil {
                     //val content = file.readText()
                     val content = file.readText(Charsets.ISO_8859_1)
                     //println("Dateiinhalt:")
+                    logger.info("MyUtil.readIsoFile()")
+                    logger.info(content)
                     return(content)
-                    //logger.info(MyClass.convertAnsiToUtf8(content))
-                    //logger.info(MyClass.convertWin1252toUtf8(content))
                 } else {
                     return "Die angegebene Datei existiert nicht."
                 }

@@ -2,3 +2,5 @@
 /.gradle/
 /build/
 /build/classes/kotlin/main/
+/logs/application.log
+/logs/konverter.ps1

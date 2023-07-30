@@ -37,3 +37,8 @@ class MyUtil {
 
     }
 }
+fun main() {
+    //MyClass.doSomething()
+    //MyClass.readBon()
+    MyUtil.readIsoFile("./src/test/resources/uumlAnsi.txt")
+}

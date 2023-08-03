@@ -29,5 +29,7 @@ class MyUtil {
     }
 }
 fun main() {
+    val logger: Logger = LogManager.getLogger(MyUtil::class.java)
+    logger.info("ae: ä / ue:ü")
     MyUtil.readIsoFile("./src/test/resources/uumlAnsi.txt")
 }

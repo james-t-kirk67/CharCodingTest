@@ -7,6 +7,6 @@ internal class MyUtilTest {
     @Test
     fun readIsoFileTest() {
         logger.info("ae: ä / ue:ü")
-        MyUtil.readIsoFile("./src/test/resources/uumlAnsi.txt")
+        logger.info(MyUtil.readIsoFile("./src/test/resources/uumlAnsi.txt"))
     }
 }

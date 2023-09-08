@@ -14,8 +14,8 @@ class MyUtil {
                     //val content = file.readText()
                     val content = file.readText(Charsets.ISO_8859_1)
                     //println("Dateiinhalt:")
-                    logger.info("MyUtil.readIsoFile()")
-                    logger.info(content)
+                    //logger.info("MyUtil.readIsoFile()")
+                    //logger.info(content)
                     return(content)
                 } else {
                     return "Die angegebene Datei existiert nicht."
@@ -31,5 +31,5 @@ class MyUtil {
 fun main() {
     val logger: Logger = LogManager.getLogger(MyUtil::class.java)
     logger.info("ae: ä / ue:ü")
-    MyUtil.readIsoFile("./src/test/resources/uumlAnsi.txt")
+    logger.info(MyUtil.readIsoFile("./src/test/resources/uumlAnsi.txt"))
 }
